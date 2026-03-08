@@ -1,16 +1,31 @@
-# React + Vite
+# Inventory Management System - Frontend Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Tech Stack & Dependencies
+* **React 18** (UI Library)
+* **Vite** (Build Tool & Development Server)
+* **Tailwind CSS v3** (Utility-first CSS styling)
+* **Axios** (Promise-based HTTP client)
+* **React Router Dom** (Client-side routing)
+* **Lucide React** (SVG Iconography)
 
-Currently, two official plugins are available:
+## ⚙️ Environment Configuration
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Create a file named `.env` in the root directory (at the same level as `package.json`).
+2. Add the following line, replacing the URL if your backend is hosted elsewhere:
+```env
+VITE_API_BASE_URL=http://localhost:8080/products
 
-## React Compiler
+SETUP INSTRUCTION :-
+1-Ensure Node.js and npm are installed on your machine.
+2-Clone this repository.
+3-Open your terminal and navigate to the project directory.
+4-Run npm install to download all dependencies.
+4-Ensure your .env file is configured .
+6-Run npm run dev to start the development server.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Assumptions:
 
-## Expanding the ESLint configuration
+1-Backend running on port 8080
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
