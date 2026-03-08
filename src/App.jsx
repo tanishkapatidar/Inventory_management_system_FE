@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import InventoryList from './components/InventoryList';
 import AddProduct from './pages/AddProduct';
-import EditProduct from './pages/Editproduct';
+import EditProduct from './pages/EditProduct';
 
 
 function App() {
