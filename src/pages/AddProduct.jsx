@@ -23,14 +23,33 @@ const AddProduct = () => {
     const saveProduct = async(e) =>{
         e.preventDefault();
 
-        try{
-            await createProduct(product);
+        const validationErrors = {};
+        if (!product.name.trim()) validationErrors.name = "Name is required";
+        if (!product.sku.trim()) validationErrors.sku = "SKU is required";
+        if (!product.price || Number(product.price) <= 0) validationErrors.price = "Price must be greater than 0";
+        if (product.quantity === '' || Number(product.quantity) < 0) validationErrors.quantity = "Quantity cannot be negative";
+    
+        if (Object.keys(validationErrors).length > 0) {
+            alert("Please fix the following errors:\n" + Object.values(validationErrors).join("\n"));
+            return;
+        }
+    
+
+        const cleanedProduct = {
+            ...product,
+            price: Number(product.price),
+            quantity: Number(product.quantity),
+            description: product.description.trim() || "" 
+        };
+    
+        try {
+            await createProduct(cleanedProduct); 
             navigate('/');
+        } catch (error) {
+            console.error("Backend Error:", error.response?.data || error);
+            alert("Server rejected the product. Check the console for details.");
         }
-        catch(error){
-            console.error("Error saving product:", error);
-            alert("Failed to save product. Check your backend console!");
-        }
+        
     };
 
     return(
